@@ -4,26 +4,77 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="dist/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Web Sekolah</title>
   </head>
-  <body>
-    <header>
-      <nav class="flex justify-between">
-        <div>
-          <a href="#" class="text-lg">PENUS</a>
+  <body class="scroll-smooth box-border font-[Quicksand]">
+    <!-- Navbar Section -->
+    <header class="fixed w-full">
+      <nav
+        class="flex justify-between py-10 text-lg max-w-screen-2xl mx-auto font-semibold z-[1000]"
+      >
+        <!-- Navbar Brand -->
+        <div class="items-center px-5">
+          <a href="#home" class="font-bold text-[2em]"
+            >Penus<span class="text-rose-600">.</span></a
+          >
         </div>
-        <div>
-          <ul class="text-lg flex flex-row">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#profil">Profil</a></li>
-            <li><a href="#berita">Berita</a></li>
-            <li><a href="#jurusan">Jurusan</a></li>
-            <li><a href="#kurikulum">Kurikulum</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-          </ul>
-        </div>
+        <!-- Navbar Buttons -->
+        <ul class="flex flex-row items-center">
+          <li><a href="#home" class="px-5">Home</a></li>
+          <li><a href="#profil" class="px-5">Profil</a></li>
+          <li><a href="#berita" class="px-5">Berita</a></li>
+          <li><a href="#jurusan" class="px-5">Jurusan</a></li>
+          <li><a href="#kurikulum" class="px-5">Kurikulum</a></li>
+          <li><a href="#kontak" class="px-5">Kontak</a></li>
+        </ul>
       </nav>
     </header>
+
+    <section
+      id="home"
+      class="relative w-full min-h-screen flex justify-center items-center"
+    >
+      <div class="max-w-[900px] text-center">
+        <h2 class="text-[2.3em]">
+          Selamat Datang Di<br /><span
+            class="text-[2.5em] font-[Poppins] font-bold"
+            >SMK Plus Pelita Nusantara</span
+          >
+        </h2>
+        <p class="text-xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+          accusantium, facilis, magni aliquid repellat, minus saepe voluptates
+          asperiores rerum adipisci nihil in!
+        </p>
+        <a
+          href="#"
+          class="inline-block text-2xl bg-rose-600 text-white py-3 px-8 mt-6 uppercase tracking-wide"
+          >Lihat Profil Kami</a
+        >
+      </div>
+    </section>
+
+    <script text="text/javascript">
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("nav");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+
+      function toggleMenu() {
+        const menuToggle = document.querySelector(".menuToggle");
+        const navigation = document.querySelector(".navigation");
+        menuToggle.classList.toggle("active");
+        navigation.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
