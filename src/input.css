@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .navbar-fixed {
-    @apply fixed z-[9999] bg-red-700;
+  @apply fixed z-[9999] bg-red-700;
 }
