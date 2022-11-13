@@ -5,27 +5,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="dist/img/logo penus.png">
     <link rel="stylesheet" href="dist/output.css">
     <script src="/dist/js/script.js"></script>
 
-    <title>Web Sekolah</title>
+    <title>SMK Plus Pelita Nusantara</title>
 </head>
 
 <body class="font-[Quicksand]">
     <!-- Navbar Section -->
     <header class="bg-transparent w-full fixed top-0 z-10">
-        <nav class="flex justify-between py-8 text-lg mx-auto font-semibold z-[1000]">
+        <nav class="flex justify-between py-4 text-lg mx-auto font-semibold z-[1000]">
             <!-- Navbar Brand -->
             <div class="flex flex-row items-center justify-center px-5">
                 <a href="#home" class="font-bold text-[2em] text-primary mx-5">Penus</a>
@@ -34,63 +30,73 @@
             <!-- Navbar Buttons -->
             <ul class="flex flex-row items-center">
                 <li>
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" href="#home"
-                        class="px-5 hover:text-primary">Home</button>
-                    <div id="dropdownNavbar"
-                        class="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                            <li>
-                                <a href="#"
-                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                            </li>
-                        </ul>
-                        <div class="py-1">
-                            <a href="#"
-                                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign
-                                out</a>
-                        </div>
-                    </div>
+                    <a href="#home" class="px-5 hover:text-primary">Home</a>
                 </li>
                 <li><a href="#profil" class="px-5 hover:text-primary">Profil</a></li>
                 <li><a href="#berita" class="px-5 hover:text-primary">Berita</a></li>
                 <li><a href="#jurusan" class="px-5 hover:text-primary">Jurusan</a></li>
-                <li><a href="#kurikulum" class="px-5 hover:text-primary">Kurikulum</a></li>
                 <li><a href="#kontak" class="px-5 hover:text-primary">Kontak</a></li>
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" href="#sosmed" class="px-5 hover:text-primary">Sosial Media</button>
+                    <div id="dropdownNavbar" class="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCtVnl7pXWLmAKpsGFjkabnQ" target="_blank" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Youtube</a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/smkpluspelitanusantara/" target="_blank" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Tiktok</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="pt-36 relative w-full flex justify-center items-center">
+    <section id="home" class="pt-36 pb-32 relative w-full flex justify-center items-center">
         <div class="max-w-[900px] text-center">
             <h2 class="text-[2em]">Selamat Datang Di<br />
-                <span class="text-[2.3em] font-[Poppins] font-bold">SMK Plus Pelita Nusantara</span>
+                <span class="text-[2.3em] font-[Poppins] font-bold">SMK Plus <br> Pelita Nusantara</span>
             </h2>
             <p class="text-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-                accusantium, facilis, magni aliquid repellat, minus saepe voluptates
-                asperiores rerum adipisci nihil in!
+                Terimakasih telah datang kesini. <br> Apa anda ingin tahu lebih jauh tentang kami?
             </p>
-            <a href="#"
-                class="rounded-full inline-block text-2xl drop-shadow-2xl hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out bg-gradient-to-r from-primary to-blue-500 hover:from-blue-500 hover:to-red-900 text-white py-3 px-8 mt-6 uppercase tracking-wide">Lihat
-                Profil Kami</a>
+            <a href="#" class="rounded-full inline-block text-xl drop-shadow-2xl shadow-2xl hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white py-3 px-8 mt-6 uppercase tracking-wide">Lihat Profil Kami</a>
         </div>
     </section>
 
     <!-- Profile Section -->
-    <section id="profil" class="pt-36">
-        <p class="mx-5 text-4xl font-bold">Profil</p>
+    <section id="profil" class="mx-20 pt-12 pb-32">
+        <div class="relative w-full flex justify-between max-w-[1300px] mx-auto">
+            <div class="relative w-[48%]">
+                <h2 class="text-[#111] text-2xl font-bold font-[Poppins]">
+                    <span class="text-primary text-3xl font-extrabold">P</span>rofil
+                    Kami
+                </h2>
+                <p class="text-lg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+                    voluptate dolor quia quibusdam ea suscipit modi dicta nobis! Ab,
+                    quas ipsa. Expedita fugit vel ducimus beatae hic repellendus quidem
+                    ipsam culpa.<br /><br />Officiis sit numquam id consequuntur, dolore
+                    similique nam corrupti. Excepturi dolorem alias quos numquam eveniet
+                    fugit et unde esse similique eligendi nihil, debitis architecto
+                    doloribus illum praesentium, expedita recusandae!
+                </p>
+            </div>
+            <div class="relative w-[48%]">
+                <div class="relative w-full h-full">
+                    <img src="./dist/img/gedung1.jpeg" alt="#" class="rounded-3xl drop-shadow-2xl top-0 left-0 w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
     </section>
-    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 
+
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 </body>
 
 </html>
