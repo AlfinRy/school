@@ -15,11 +15,11 @@
 
     <title>Web Sekolah</title>
   </head>
-  <body class="scroll-smooth box-border font-[Quicksand]">
+  <body class="box-border font-[Quicksand]">
     <!-- Navbar Section -->
-    <header class="fixed w-full">
+    <header class="fixed w-full z-[10000] text-white">
       <nav
-        class="flex justify-between py-10 text-lg max-w-screen-2xl mx-auto font-semibold z-[1000]"
+        class="flex justify-between py-10 text-lg max-w-screen-2xl mx-auto font-semibold"
       >
         <!-- Navbar Brand -->
         <div class="items-center px-5">
@@ -41,28 +41,57 @@
 
     <section
       id="home"
-      class="relative w-full min-h-screen flex justify-center items-center"
+      class="relative w-full min-h-screen flex justify-center items-center p-[100px] bg-zinc-900 text-white"
     >
       <div class="max-w-[900px] text-center">
         <h2 class="text-[2.3em]">
           Selamat Datang Di<br /><span
             class="text-[2.5em] font-[Poppins] font-bold"
-            >SMK Plus Pelita Nusantara</span
+            >SMK Plus<br />Pelita Nusantara</span
           >
         </h2>
         <p class="text-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-          accusantium, facilis, magni aliquid repellat, minus saepe voluptates
-          asperiores rerum adipisci nihil in!
+          Terima kasih telah datang kesini. Apa anda ingin tahu lebih jauh
+          tentang kami?
         </p>
         <a
-          href="#"
-          class="inline-block text-2xl bg-rose-600 text-white py-3 px-8 mt-6 uppercase tracking-wide"
+          href="#profil"
+          class="inline-block text-xl bg-rose-600 text-white py-3 px-8 mt-6 uppercase tracking-wide hover:tracking-[0.08em] duration-[0.5s] rounded-sm shadow-md"
           >Lihat Profil Kami</a
         >
       </div>
     </section>
 
+    <section id="profil" class="p-[100px]">
+      <div class="relative w-full flex justify-between max-w-[1300px] mx-auto">
+        <div class="relative w-[48%]">
+          <h2 class="text-[#111] text-2xl font-bold font-[Poppins]">
+            <span class="text-rose-600 text-3xl font-extrabold">P</span>rofil
+            Kami
+          </h2>
+          <p class="text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+            voluptate dolor quia quibusdam ea suscipit modi dicta nobis! Ab,
+            quas ipsa. Expedita fugit vel ducimus beatae hic repellendus quidem
+            ipsam culpa.<br /><br />Officiis sit numquam id consequuntur, dolore
+            similique nam corrupti. Excepturi dolorem alias quos numquam eveniet
+            fugit et unde esse similique eligendi nihil, debitis architecto
+            doloribus illum praesentium, expedita recusandae!
+          </p>
+        </div>
+        <div class="relative w-[48%]">
+          <div class="relative w-full h-full">
+            <img
+              src="./dist/img/random1.jpg"
+              alt="#"
+              class="absolute top-0 left-0 w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JS -->
     <script text="text/javascript">
       window.addEventListener("scroll", function () {
         const header = document.querySelector("nav");
