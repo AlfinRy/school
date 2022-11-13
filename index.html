@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+    ></script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,18 +19,38 @@
       rel="stylesheet"
     />
 
-    <title>Web Sekolah</title>
+    <title>SMK Plus Pelita Nusantara</title>
   </head>
-  <body class="box-border font-[Quicksand]">
+  <body
+    class="box-border font-[Quicksand]"
+    x-data="{navbarOpen: false, scrolledFromTop: false}"
+    x-init="window.pageYOffset > 30 ? scrolledFromTop = true : scrolledFromTop = false"
+    @scroll.window="window.pageYOffset > 30 ? scrolledFromTop = true : scrolledFromTop = false"
+  >
     <!-- Navbar Section -->
-    <header class="fixed w-full z-[10000] text-white">
+    <header class="fixed w-full z-[10000] text-white bg-zinc-900">
       <nav
-        class="flex justify-between py-10 text-lg max-w-screen-2xl mx-auto font-semibold"
+        class="flex justify-between lg:py-10 lg:text-lg max-w-screen-2xl mx-auto font-semibold duration-[0.3s] sm:text-base sm:py-8"
+        :class="{'py-10': !scrolledFromTop, 'py-3': scrolledFromTop}"
       >
         <!-- Navbar Brand -->
-        <div class="items-center px-5">
-          <a href="#home" class="font-bold text-[2em]"
-            >Penus<span class="text-rose-600">.</span></a
+        <div class="items-center px-5 w-auto">
+          <a
+            href="#home"
+            class="font-bold lg:text-[2em] flex flex-row items-center duration-[0.3s] sm:text-[1.8em]"
+            :class="{'text-[1.7em]': scrolledFromTop, 'sm:text-[1.5em]': scrolledFromTop}"
+          >
+            <img
+              src="./dist/img/logo-penus-square.png"
+              alt=""
+              class="w-[1.6em]"
+              :class="{'w-[1.3em]': scrolledFromTop'}"
+            />
+            Penus<span
+              class="text-rose-600 text-[38px]"
+              :class="{'pb-0': !scrolledFromTop, 'pb-[1px]': scrolledFromTop'}"
+              >.</span
+            ></a
           >
         </div>
         <!-- Navbar Buttons -->
@@ -39,6 +65,7 @@
       </nav>
     </header>
 
+    <!-- Home Section -->
     <section
       id="home"
       class="relative w-full min-h-screen flex justify-center items-center p-[100px] bg-zinc-900 text-white"
@@ -62,6 +89,7 @@
       </div>
     </section>
 
+    <!-- Profil Section -->
     <section id="profil" class="p-[100px]">
       <div class="relative w-full flex justify-between max-w-[1300px] mx-auto">
         <div class="relative w-[48%]">
