@@ -1,102 +1,137 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth ">
-
-<head>
+<html lang="en" class="scroll-smooth">
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+    <!-- CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+    ></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="dist/img/logo penus.png">
-    <link rel="stylesheet" href="dist/output.css">
-    <script src="/dist/js/script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>SMK Plus Pelita Nusantara</title>
-</head>
-
-<body class="font-[Quicksand]">
+  </head>
+  <body
+    class="box-border font-[Quicksand]"
+    x-data="{navbarOpen: false, scrolledFromTop: false}"
+    x-init="window.pageYOffset > 30 ? scrolledFromTop = true : scrolledFromTop = false"
+    @scroll.window="window.pageYOffset > 30 ? scrolledFromTop = true : scrolledFromTop = false"
+  >
     <!-- Navbar Section -->
-    <header class="bg-transparent w-full fixed top-0 z-10">
-        <nav class="flex justify-between py-4 text-lg mx-auto font-semibold z-[1000]">
-            <!-- Navbar Brand -->
-            <div class="flex flex-row items-center justify-center px-5">
-                <a href="#home" class="font-bold text-[2em] text-primary mx-5">Penus</a>
-                <img src="/dist/img/logo penus.png" alt="Logo" class="w-10">
-            </div>
-            <!-- Navbar Buttons -->
-            <ul class="flex flex-row items-center">
-                <li>
-                    <a href="#home" class="px-5 hover:text-primary">Home</a>
-                </li>
-                <li><a href="#profil" class="px-5 hover:text-primary">Profil</a></li>
-                <li><a href="#berita" class="px-5 hover:text-primary">Berita</a></li>
-                <li><a href="#jurusan" class="px-5 hover:text-primary">Jurusan</a></li>
-                <li><a href="#kontak" class="px-5 hover:text-primary">Kontak</a></li>
-                <li>
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" href="#sosmed" class="px-5 hover:text-primary">Sosial Media</button>
-                    <div id="dropdownNavbar" class="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                            <li>
-                                <a href="https://www.youtube.com/channel/UCtVnl7pXWLmAKpsGFjkabnQ" target="_blank" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Youtube</a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/smkpluspelitanusantara/" target="_blank" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Instagram</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Tiktok</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+    <header class="fixed w-full z-[10000] text-white bg-zinc-900">
+      <nav
+        class="flex justify-between lg:py-10 lg:text-lg max-w-screen-2xl mx-auto font-semibold duration-[0.3s] sm:text-base sm:py-8"
+        :class="{'py-10': !scrolledFromTop, 'py-3': scrolledFromTop}"
+      >
+        <!-- Navbar Brand -->
+        <div class="items-center px-5 w-auto">
+          <a
+            href="#home"
+            class="font-bold lg:text-[2em] flex flex-row items-center duration-[0.3s] sm:text-[1.8em]"
+            :class="{'text-[1.7em]': scrolledFromTop, 'sm:text-[1.5em]': scrolledFromTop}"
+          >
+            <img
+              src="./dist/img/logo-penus-square.png"
+              alt=""
+              class="w-[1.6em]"
+              :class="{'w-[1.3em]': scrolledFromTop'}"
+            />
+            Penus<span
+              class="text-rose-600 text-[38px]"
+              :class="{'pb-0': !scrolledFromTop, 'pb-[1px]': scrolledFromTop'}"
+              >.</span
+            ></a
+          >
+        </div>
+        <!-- Navbar Buttons -->
+        <ul class="flex flex-row items-center">
+          <li><a href="#home" class="px-5">Home</a></li>
+          <li><a href="#profil" class="px-5">Profil</a></li>
+          <li><a href="#berita" class="px-5">Berita</a></li>
+          <li><a href="#jurusan" class="px-5">Jurusan</a></li>
+          <li><a href="#kurikulum" class="px-5">Kurikulum</a></li>
+          <li><a href="#kontak" class="px-5">Kontak</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="pt-36 pb-32 relative w-full flex justify-center items-center">
-        <div class="max-w-[900px] text-center">
-            <h2 class="text-[2em]">Selamat Datang Di<br />
-                <span class="text-[2.3em] font-[Poppins] font-bold">SMK Plus <br> Pelita Nusantara</span>
-            </h2>
-            <p class="text-xl">
-                Terimakasih telah datang kesini. <br> Apa anda ingin tahu lebih jauh tentang kami?
-            </p>
-            <a href="#" class="rounded-full inline-block text-xl drop-shadow-2xl shadow-2xl hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white py-3 px-8 mt-6 uppercase tracking-wide">Lihat Profil Kami</a>
-        </div>
+    <section
+      id="home"
+      class="relative w-full min-h-screen flex justify-center items-center p-[100px] bg-zinc-900 text-white"
+    >
+      <div class="max-w-[900px] text-center">
+        <h2 class="text-[2.3em]">
+          Selamat Datang Di<br /><span
+            class="text-[2.5em] font-[Poppins] font-bold"
+            >SMK Plus<br />Pelita Nusantara</span
+          >
+        </h2>
+        <p class="text-xl">
+          Terima kasih telah datang kesini. Apa anda ingin tahu lebih jauh
+          tentang kami?
+        </p>
+        <a
+          href="#profil"
+          class="inline-block text-xl bg-rose-600 text-white py-3 px-8 mt-6 uppercase tracking-wide hover:tracking-[0.08em] duration-[0.5s] rounded-sm shadow-md"
+          >Lihat Profil Kami</a
+        >
+      </div>
     </section>
 
-    <!-- Profile Section -->
-    <section id="profil" class="mx-20 pt-12 pb-32">
-        <div class="relative w-full flex justify-between max-w-[1300px] mx-auto">
-            <div class="relative w-[48%]">
-                <h2 class="text-[#111] text-2xl font-bold font-[Poppins]">
-                    <span class="text-primary text-3xl font-extrabold">P</span>rofil
-                    Kami
-                </h2>
-                <p class="text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                    voluptate dolor quia quibusdam ea suscipit modi dicta nobis! Ab,
-                    quas ipsa. Expedita fugit vel ducimus beatae hic repellendus quidem
-                    ipsam culpa.<br /><br />Officiis sit numquam id consequuntur, dolore
-                    similique nam corrupti. Excepturi dolorem alias quos numquam eveniet
-                    fugit et unde esse similique eligendi nihil, debitis architecto
-                    doloribus illum praesentium, expedita recusandae!
-                </p>
-            </div>
-            <div class="relative w-[48%]">
-                <div class="relative w-full h-full">
-                    <img src="./dist/img/gedung1.jpeg" alt="#" class="rounded-3xl drop-shadow-2xl top-0 left-0 w-full h-full object-cover" />
-                </div>
-            </div>
+    <!-- Profil Section -->
+    <section id="profil" class="p-[100px]">
+      <div class="relative w-full flex justify-between max-w-[1300px] mx-auto">
+        <div class="relative w-[48%]">
+          <h2 class="text-[#111] text-2xl font-bold font-[Poppins]">
+            <span class="text-rose-600 text-3xl font-extrabold">P</span>rofil
+            Kami
+          </h2>
+          <p class="text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+            voluptate dolor quia quibusdam ea suscipit modi dicta nobis! Ab,
+            quas ipsa. Expedita fugit vel ducimus beatae hic repellendus quidem
+            ipsam culpa.<br /><br />Officiis sit numquam id consequuntur, dolore
+            similique nam corrupti. Excepturi dolorem alias quos numquam eveniet
+            fugit et unde esse similique eligendi nihil, debitis architecto
+            doloribus illum praesentium, expedita recusandae!
+          </p>
         </div>
+        <div class="relative w-[48%]">
+          <div class="relative w-full h-full">
+            <img
+              src="./dist/img/random1.jpg"
+              alt="#"
+              class="absolute top-0 left-0 w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- JS -->
+    <script text="text/javascript">
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("nav");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
 
-    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-</body>
-
+      function toggleMenu() {
+        const menuToggle = document.querySelector(".menuToggle");
+        const navigation = document.querySelector(".navigation");
+        menuToggle.classList.toggle("active");
+        navigation.classList.toggle("active");
+      }
+    </script>
+  </body>
 </html>
